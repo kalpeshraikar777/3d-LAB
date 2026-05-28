@@ -1,0 +1,234 @@
+.ui-overlay {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Let clicks pass through if needed, though now it's mostly UI */
+  display: flex;
+  padding: 20px;
+  gap: 20px;
+}
+
+.sidebar {
+  pointer-events: auto;
+  width: 300px;
+  background: var(--panel-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.sidebar-header {
+  padding: 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.btn-home {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+  padding: 8px;
+}
+
+.lab-title {
+  margin: 0;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.experiment-list {
+  padding: 20px;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.list-title {
+  color: var(--accent-cyan);
+  margin-bottom: 15px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+.exp-btn {
+  width: 100%;
+  text-align: left;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid transparent;
+  color: var(--text-color);
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.exp-btn:hover {
+  background: rgba(0, 255, 204, 0.1);
+  border-color: rgba(0, 255, 204, 0.3);
+}
+
+.exp-btn.active {
+  background: rgba(0, 255, 204, 0.2);
+  border-color: var(--accent-cyan);
+  color: #fff;
+  box-shadow: 0 0 10px rgba(0, 255, 204, 0.2);
+}
+
+.floating-notebook-btn {
+  pointer-events: auto;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(0, 255, 204, 0.2);
+  border: 1px solid var(--accent-cyan);
+  color: var(--accent-cyan);
+  padding: 15px 30px;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  backdrop-filter: blur(5px);
+  transition: all 0.3s;
+  box-shadow: 0 0 15px rgba(0, 255, 204, 0.3);
+  z-index: 100;
+}
+
+.floating-notebook-btn:hover {
+  background: rgba(0, 255, 204, 0.4);
+  box-shadow: 0 0 25px rgba(0, 255, 204, 0.6);
+  transform: scale(1.05);
+}
+
+.experiment-panel-modal {
+  pointer-events: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 800px;
+  height: 85vh;
+  background: rgba(10, 10, 26, 0.95);
+  border: 2px solid var(--accent-cyan);
+  border-radius: 12px;
+  backdrop-filter: blur(20px);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 60px rgba(0, 255, 204, 0.2), 0 0 0 100vw rgba(0,0,0,0.5);
+  z-index: 1000;
+}
+
+.panel-header {
+  padding: 20px;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.panel-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--accent-cyan);
+}
+
+.hint-btn {
+  background: transparent;
+  border: 1px solid var(--accent-orange);
+  color: var(--accent-orange);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.hint-btn:hover {
+  background: rgba(255, 107, 53, 0.2);
+  box-shadow: 0 0 10px var(--accent-orange);
+}
+
+.tab-navigation {
+  display: flex;
+  border-bottom: 1px solid var(--border-color);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.tab-btn {
+  flex: 1;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: var(--text-color);
+  padding: 12px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.tab-btn:hover {
+  background: rgba(0, 255, 204, 0.05);
+}
+
+.tab-btn.active {
+  color: var(--accent-cyan);
+  border-bottom-color: var(--accent-cyan);
+  background: rgba(0, 255, 204, 0.1);
+}
+
+.tab-content {
+  padding: 20px;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.tab-pane {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.exp-btn.completed {
+  border-left: 4px solid var(--accent-cyan);
+}
+
+.result-badge {
+  display: inline-block;
+  padding: 10px 20px;
+  background: rgba(0, 255, 204, 0.2);
+  border: 2px solid var(--accent-cyan);
+  border-radius: 50px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  animation: pulse-glow 2s infinite;
+}
+
+@keyframes pulse-glow {
+  0% { box-shadow: 0 0 10px rgba(0, 255, 204, 0.5); }
+  50% { box-shadow: 0 0 25px rgba(0, 255, 204, 1); }
+  100% { box-shadow: 0 0 10px rgba(0, 255, 204, 0.5); }
+}

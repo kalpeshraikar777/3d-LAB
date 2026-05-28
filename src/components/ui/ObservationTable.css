@@ -1,0 +1,52 @@
+.observation-table-container {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 20px;
+}
+
+.observation-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.observation-table th {
+  background: rgba(0, 255, 204, 0.15);
+  color: var(--accent-cyan);
+  padding: 12px;
+  text-align: center;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.85rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.observation-table td {
+  padding: 8px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.observation-table input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 8px;
+  border-radius: 4px;
+  text-align: center;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1rem;
+}
+
+.observation-table input:focus {
+  outline: none;
+  border-color: var(--accent-cyan);
+  background: rgba(0, 255, 204, 0.05);
+}
+
+.btn-calculate {
+  margin-top: 20px;
+  width: 100%;
+}
